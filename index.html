@@ -3,19 +3,91 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>宝宝搜书</title>
+<script>
+
+function so(){
+	//var bookname = $("#bookname").val();
+	//console.log(bookname);
+	var bookname=document.getElementById("bookname").value;
+	//bookname=encodeURI(bookname);  
+	var url;
+
+	//百度
+	url="https://www.baidu.com/s?&ie=UTF-8&wd="+bookname;
+	window.open(url);
+
+	//ePUBee电子书库
+	url="http://cn.epubee.com/books/?s="+bookname;
+	window.open(url);
+	
+	//西林街
+	url="http://www.xilinjie.com/s?ff=book&q="+bookname;
+	window.open(url);
+	
+	//盘搜搜
+	url="http://www.pansoso.com/vdisk/"+bookname;
+	window.open(url);
+	
+	//全国图书馆参考图书联盟
+	url="http://book.ucdrs.superlib.net/search?Field=all&ecode=utf-8&channel=search&sw="+bookname;
+	window.open(url);
+	
+	//亚马逊
+	url="https://www.amazon.cn/s/ref=nb_sb_noss?__mk_zh_CN=%E4%BA%9A%E9%A9%AC%E9%80%8A%E7%BD%91%E7%AB%99&url=search-alias%3Ddigital-text&field-keywords="+bookname;
+	window.open(url);
+
+	//多看
+	url="http://www.duokan.com/search/"+bookname;
+	window.open(url);
+	
+	//豆瓣
+	url="https://book.douban.com/subject_search?search_text="+bookname;
+	window.open(url);
+	
+}
+</script>
+<style type="text/css">
+.bookpos {
+	width: 484px;
+	height: 70px;
+}
+.bookname {
+	width: 484px;
+	height: 30px;
+}
+.sm {
+	height: 36px;
+	width: 100px;
+}
+</style>
 </head>
 
-<body>
-<h1>宝宝搜书</h1>
-<form id="form1" name="form1" method="post" action="">
-  <p>
-    <label for="iall"></label>
-    <input type="text" name="iall" id="iall" />
-  </p>
-  <p>
-    <input type="button" name="soso" id="soso" value="按钮" />
-  </p>
+<body bgcolor="#ffffff" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<p></p>
+<form action="" method="get" enctype="application/x-www-form-urlencoded" name="mainform" target="_new" id="mainform" onsubmit="return false;so();">
+
+<table width="1144" height="431" border="0" align="center" cellpadding="0" cellspacing="0" id="__01">
+	<tr>
+		<td rowspan="3">
+			<img src="images/baby_01.jpg" width="384" height="431" alt=""></td>
+		<td colspan="2">
+			<img src="images/baby_02.jpg" width="760" height="175" alt=""></td>
+	</tr>
+	<tr>
+		<td class="bookpos"><input name="haha" type="text" class="bookname" id="bookname" /></td>
+		<td>
+			<input name="soso" type="submit" class="sm" id="soso" onclick="so();" value="搜书" /></td>
+	</tr>
+	<tr>
+		<td colspan="2">
+			<img src="images/baby_05.jpg" width="760" height="186" alt=""></td>
+	</tr>
+</table>
+
 </form>
-<p>&nbsp;</p>
+<script>
+var oInput = document.getElementById("bookname");
+oInput.focus();
+</script>
 </body>
 </html>
